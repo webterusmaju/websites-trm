@@ -111,7 +111,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm px-4 py-4 text-black animate-slide-in-down">
-          <a href="/about/page.js" className="block text-sm py-2 hover:text-[#A8895B]">About</a>
+          <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About</a>
 
           <button
             onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
@@ -136,7 +136,7 @@ export default function Navbar() {
             </div>
           )}
 
-          <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About us</a>
+         
           <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">VIP Services</a>
           <a href="/contact" className="block text-sm py-2 hover:text-[#A8895B]">Contact Us</a>
 
