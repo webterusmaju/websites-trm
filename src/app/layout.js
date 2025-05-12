@@ -16,8 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Malaysia Airport CABTAXI",
-  description: "Your First-Class Airport Rid",
+  description: "Your First-Class Airport Ride",
+  icons: {
+    icon: "/landing/Logo.png",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
