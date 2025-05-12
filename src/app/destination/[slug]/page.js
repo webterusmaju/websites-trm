@@ -11,10 +11,13 @@ export default function DestinationPage() {
     .join(" ");
 
   return (
-    <div className="min-h-screen bg-white py-24 px-6 text-center">
-      <h1 className="text-4xl font-bold text-[#A8895B] mb-4">{formattedName}</h1>
-      <p className="text-gray-700 text-lg max-w-2xl mx-auto">
-        Welcome to our VIP Chauffeur Services in <strong>{formattedName}</strong>. Get ready to experience luxury rides tailored to your needs.
+    <div className="min-h-screen bg-[#e6e3de] pt-[100px] pb-20 px-6 text-center">
+      <h1 className="text-4xl sm:text-5xl font-bold text-[#D4AF37] mb-6 tracking-tight">
+        {formattedName}
+      </h1>
+      <p className="text-gray-800 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Welcome to our VIP Chauffeur Services in <strong>{formattedName}</strong>.<br />
+        Enjoy premium airport pickup, luxury rides, and elite chauffeur experience.
       </p>
     </div>
   );

@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Desktop dropdown toggle
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false); // Mobile dropdown
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
   const router = useRouter();
@@ -18,7 +19,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Auto close dropdown if click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -47,21 +47,31 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-2">
-            <span className="text-lg sm:text-2xl font-bold tracking-wide">
-              TERUS MAJU RESOURCES
-            </span>
-            <span className="text-[10px] sm:text-xs uppercase text-gray-400">
-              Travelling In Style
-            </span>
+          {/* Logo + Brand Name */}
+          <div className="flex items-center space-x-3 animate-fade-in py-1 sm:py-2">
+            <Image
+              src="/landing/Logo.png"
+              alt="Malaysia Airport Cab Taxi Logo"
+              width={60}
+              height={60}
+              className="object-contain"
+            />
+            <div className="flex flex-col leading-tight">
+        <span className="text-sm sm:text-xl font-bold tracking-wide break-words text-wrap text-center sm:text-left">
+  MALAYSIA AIRPORT<br className="block sm:hidden" /> CABTAXI
+</span>
+
+
+              <span className="text-[10px] sm:text-xs uppercase text-gray-400">
+              Your First-Class Airport Ride
+              </span>
+            </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center text-sm">
             <a href="/" className="hover:text-[#A8895B] transition">Home</a>
 
-            {/* Desktop Dropdown (click toggle) */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen((prev) => !prev)}
@@ -84,13 +94,9 @@ export default function Navbar() {
               )}
             </div>
 
-            <a href="#" className="hover:text-[#A8895B] transition">Airport VIP Fasttrack</a>
+            <a href="/about" className="hover:text-[#A8895B] transition">About Us</a>
             <a href="#" className="hover:text-[#A8895B] transition">VIP Services</a>
-            <a href="#" className="hover:text-[#A8895B] transition">Contact Us</a>
-            <div className="flex items-center space-x-1">
-              <Globe className="h-4 w-4 text-gray-400" />
-              <span>English</span>
-            </div>
+            <a href="/contact" className="hover:text-[#A8895B] transition">Contact Us</a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -105,9 +111,8 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm px-4 py-4 text-black animate-slide-in-down">
-          <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">About</a>
+          <a href="/about/page.js" className="block text-sm py-2 hover:text-[#A8895B]">About</a>
 
-          {/* Mobile Dropdown */}
           <button
             onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
             className="w-full text-left text-sm font-semibold py-2 flex items-center justify-between"
@@ -131,13 +136,12 @@ export default function Navbar() {
             </div>
           )}
 
-          <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">Airport VIP Fasttrack</a>
+          <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About us</a>
           <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">VIP Services</a>
-          <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">Contact Us</a>
+          <a href="/contact" className="block text-sm py-2 hover:text-[#A8895B]">Contact Us</a>
 
           <div className="flex items-center space-x-1 pt-4 border-t border-gray-200 mt-4">
             <Globe className="h-4 w-4 text-gray-500" />
-            <span className="text-sm">English</span>
           </div>
         </div>
       )}

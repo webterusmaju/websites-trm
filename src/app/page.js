@@ -1,3 +1,5 @@
+// Luxury-style UI for Malaysia Airport Cab Taxi with golden, white, and matte black theme
+
 "use client";
 
 import Navbar from "../components/Navbar";
@@ -6,30 +8,24 @@ import Slider from "react-slick";
 import { useState } from "react";
 import { PlaneLanding, Landmark, GlassWater, PartyPopper, Building2, BusFront } from "lucide-react";
 
-
-// 💡 Carousel data
 const slides = [
   {
     image: "/landing/carrental1.png",
     title: "Luxury MPV / Mercedes",
-    desc:
-      "Premium full spec Alphard / Vellfire / BMW / Mercedes available at your service. Making sure your travel is classy as always.",
+    desc: "Premium full spec Alphard / Vellfire / BMW / Mercedes available at your service.",
   },
   {
     image: "/landing/carrental2.png",
     title: "Professional Drivers",
-    desc:
-      "Our professional drivers will pick you up at any location anytime. Ensuring you a ride on time every time safely while you ride in luxury.",
+    desc: "Our professional drivers will pick you up anywhere, anytime with class and safety.",
   },
   {
     image: "/landing/carrental3.png",
     title: "Flexible Rates",
-    desc:
-      "No matter what services you need, we always offer flexible charging rate to suit your plan. Per trip or hourly from RM90/hour.",
+    desc: "Affordable & transparent hourly/per trip pricing. Starting from RM90/hour.",
   },
 ];
 
-//gelerypage 
 const galleryImages = [
   "/landing/carrental1.png",
   "/landing/carrental2.png",
@@ -38,7 +34,6 @@ const galleryImages = [
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -48,8 +43,10 @@ export default function Home() {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
-    beforeChange: (oldIndex, newIndex) => setCurrent(newIndex),
+    beforeChange: (_, newIndex) => setCurrent(newIndex),
   };
+
+
 
   const [submitted, setSubmitted] = useState(false);
 const [loading, setLoading] = useState(false);
@@ -85,137 +82,129 @@ const handleSubmit = async (e) => {
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative min-h-[100vh] bg-black text-white flex items-center justify-center">
+      <section className="relative min-h-screen w-full text-white">
         <Image
-          src="/landing/carrental2.png"
-          alt="Luxury car and jet"
+          src="/landing/airport1.png"
+          alt="Luxury Hero Background"
           layout="fill"
           objectFit="cover"
-          className="opacity-50"
+          className="brightness-[.4]"
           priority
         />
-        <div className="absolute z-10 text-center px-4 sm:px-6 max-w-2xl">
-          <h1 className="text-2xl sm:text-5xl font-bold mb-4 leading-tight">
-            Your first class chauffeur service
+        <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-20 z-10 max-w-6xl">
+          <p className="uppercase text-sm tracking-widest text-white/90 mb-2">Exceptional</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            Malaysia Airport CabTaxi
           </h1>
-          <p className="text-sm sm:text-lg mb-6 leading-relaxed">
-            Travelling in ultimate luxury with Terus Maju Resources. With the
-            largest fleet of luxury vehicles, we offer bespoke, first-class
-            chauffeur services and personalised journeys that ensure you arrive in style.
+          <p className="text-sm md:text-base text-white/80 mb-6 max-w-lg">
+            Experience our bespoke first-class chauffeur service with the largest fleet in Malaysia.
           </p>
           <a
-            href="#"
-            className="bg-[#A8895B] text-white py-2 px-4 sm:py-3 sm:px-6 rounded shadow hover:bg-[#8a744d] transition text-sm sm:text-base"
+            href="#booking"
+            className="bg-[#D4AF37] text-white text-sm md:text-base font-semibold py-3 px-6 rounded-md shadow hover:bg-[#c6a239] transition"
           >
-            Request a Quote
+            BOOK NOW
+          </a>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 bg-white/95 text-[#1C1C1C] flex items-center justify-between px-6 md:px-20 py-4 text-sm shadow-md">
+          <div className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" placeholder="Search services or vehicles..." className="bg-transparent outline-none placeholder-gray-600 text-sm w-52 md:w-96" />
+          </div>
+          <a href="#booking" className="text-sm font-semibold hover:underline">
+            BOOK AN APPOINTMENT →
           </a>
         </div>
       </section>
 
       {/* WHY CHOOSE US */}
-      <section className="bg-white py-14 px-4 sm:px-16 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-10 text-gray-800">
-          Why Choose Us
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
+      <section className="bg-white py-20 px-6 sm:px-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1C1C1C] mb-12">Why Choose Us</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {slides.map((item, idx) => (
-            <div
-              key={idx}
-              className="shadow-md p-6 rounded-lg border hover:shadow-xl transition"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-[#A8895B]">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p>
+            <div key={idx} className="bg-white border border-[#E5E5E5] rounded-xl p-6 shadow-sm hover:shadow-xl transition-all">
+              <h3 className="text-lg font-semibold text-[#D4AF37] mb-3">{item.title}</h3>
+              <p className="text-sm text-gray-700">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* VIP SLIDER SECTION */}
-  {/* VIP Chauffeur Slider Section */}
-
-<section className="bg-white py-24 px-6 sm:px-16">
-  <p className="text-sm uppercase text-[#A8895B] tracking-[0.25em] text-center mb-2">
-    Largest Chauffeur Service Provider
-  </p>
-  <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 text-center mb-16 leading-tight">
-    Tailormade Bespoke VIP Chauffeur Service
-  </h2>
-
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-    {/* Gambar Slider – NO FRAME */}
-    <Slider {...settings} className="w-full max-w-2xl mx-auto">
-      {slides.map((item, index) => (
-        <div key={index} className="overflow-hidden group cursor-pointer">
-          <Image
-            src={item.image}
-            alt={item.title}
-            width={1000}
-            height={600}
-            className="w-full h-[500px] object-cover transition-all duration-700 
-                       group-hover:scale-105 group-hover:brightness-110 group-active:scale-100"
-          />
+      {/* PREMIUM VEHICLE SLIDER */}
+      <section className="bg-[#f9f9f9] py-20 px-6 sm:px-16">
+        <h2 className="text-4xl font-bold text-center text-[#1C1C1C] mb-16">Our Premium Fleet</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <Slider {...settings} className="w-full max-w-xl mx-auto">
+            {slides.map((item, idx) => (
+              <div key={idx} className="group cursor-pointer overflow-hidden rounded-xl">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={800}
+                  height={500}
+                  className="w-full h-[400px] object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
+            ))}
+          </Slider>
+          <div className="text-center md:text-left px-6">
+            <h3 className="text-2xl font-bold text-[#D4AF37] mb-4">{slides[current].title}</h3>
+            <p className="text-[#2C2C2C] mb-6">{slides[current].desc}</p>
+            <a href="#booking" className="bg-[#D4AF37] text-white py-2 px-6 rounded-full shadow hover:shadow-lg">
+              Request Booking
+            </a>
+          </div>
         </div>
-      ))}
-    </Slider>
+      </section>
 
-    {/* Content Kanan */}
-    <div className="text-center md:text-left px-4 sm:px-10">
-      <h3 className="text-3xl sm:text-4xl font-bold text-[#A8895B] mb-6 tracking-tight">
-        {slides[current].title}
-      </h3>
-      <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-8">
-        {slides[current].desc}
-      </p>
-      <a
-        href="#"
-        className="inline-block bg-[#A8895B] text-white font-semibold tracking-wide text-sm sm:text-base py-3 px-8 
-                   rounded-md transition-all duration-300 shadow-md hover:bg-yellow-500 hover:shadow-lg"
-      >
-        Book Now
-      </a>
-    </div>
-  </div>
-</section>
 
-{/* Welcome Super VIP Section */}
 <section className="relative h-screen text-white flex items-center justify-center text-center">
   {/* Background Image */}
   <Image
-    src="/landing/carrental3.png" // Ganti ikut nama gambar sebenar
-    alt="VIP Vellfire"
+    src="/landing/carrental3.png"
+    alt="VIP Experience"
     layout="fill"
     objectFit="cover"
-    className="z-0 brightness-[.45]"
+    className="z-0"
     priority
   />
 
+  {/* Overlay black layer */}
+  <div className="absolute inset-0 bg-black/60 z-[1]" />
+
   {/* Overlay Content */}
   <div className="absolute z-10 max-w-3xl px-6">
-    {/* Logo atas */}
-    <div className="mb-4">
-      <h1 className="text-[48px] font-serif tracking-widest leading-none">TRM</h1>
-      <p className="uppercase tracking-[.2em] text-xs text-gray-200">
-        TERUS MAJU RESOURCES
+    <div className="mb-6 flex flex-col items-center">
+      <div className="w-full max-w-[200px] mb-4 animate-fade-in">
+        <Image
+          src="/landing/Logo.png"
+          alt="Malaysia Airport Cab Taxi Logo"
+          width={500}
+          height={500}
+          className="w-full object-contain"
+        />
+      </div>
+      <p className="uppercase tracking-[.2em] text-sm text-gray-200 font-light text-center">
+        Malaysia Airport CabTaxi
       </p>
-      <p className="text-[10px] text-gray-300 tracking-widest">Travelling in Style</p>
+      <p className="text-xs text-gray-300 tracking-widest font-light text-center">
+        Your First-Class Airport Ride
+      </p>
     </div>
-    {/* Title */}
-    <h2 className="text-2xl sm:text-4xl font-semibold mb-4">
-      We offer you a super VIP experience in Malaysia.
+
+    <h2 className="text-3xl sm:text-5xl font-semibold mb-6 text-white leading-tight">
+      Experience the Super VIP Treatment in Malaysia
     </h2>
 
-    {/* Description */}
-    <p className="text-sm sm:text-base text-gray-200 max-w-xl mx-auto mb-8">
-      By offering exceptional service with no detail unattended, we have been fortunate enough to have developed into the leading provider of ground transportation in the area.
+    <p className="text-base sm:text-lg text-gray-200 max-w-xl mx-auto mb-8 leading-relaxed">
+      Where every ride is elevated to a first-class journey. Immerse yourself in elite service, luxury vehicles, and absolute comfort that redefines transportation.
     </p>
 
-    {/* Button */}
     <a
       href="#contact"
-      className="bg-[#A8895B] text-white font-medium text-sm sm:text-base py-3 px-7 
-                 rounded-md hover:bg-yellow-500 transition"
+      className="bg-[#D4AF37] hover:bg-[#c6a239] text-white font-medium text-sm sm:text-base py-3 px-8 rounded-full shadow-md transition"
     >
       Contact Us
     </a>
@@ -224,231 +213,169 @@ const handleSubmit = async (e) => {
 
 
 
-
-      {/* TOP RATED CHAUFFEUR SECTION */}
-      <section className="bg-[#f8f6fb] py-20 px-6 sm:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="flex justify-center">
-            <Image
-              src="/landing/badge.png"
-              alt="Top Rated Chauffeur"
-              width={300}
-              height={300}
-              className="object-contain"
-            />
-          </div>
-
-          <div className="text-gray-700 text-sm sm:text-base">
-            <p className="leading-relaxed">
-              The premier choice for award-winning luxury chauffeur services that cater to exclusive clients like you who value elegance, comfort and privacy.
-              Each journey with us is tailored to your individual preferences, ensuring an unparalleled level of service that anticipates and exceeds your expectations.
-              Making us the preferred choice for those who seek the ultimate in luxury transportation.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-white mt-16 p-6 sm:p-10 rounded-lg shadow-xl max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 text-center gap-6">
-          <div>
-            <div className="text-[#a8895b] mb-1 text-2xl sm:text-3xl font-bold">3,883</div>
-            <p className="text-sm text-gray-700">bookings made</p>
-          </div>
-          <div>
-            <div className="text-[#a8895b] mb-1 text-2xl sm:text-3xl font-bold">177,551</div>
-            <p className="text-sm text-gray-700">KM travelled safely</p>
-          </div>
-          <div>
-            <div className="text-[#a8895b] mb-1 text-2xl sm:text-3xl font-bold">200</div>
-            <p className="text-sm text-gray-700">Over 200 premium MPV</p>
-          </div>
-          <div>
-            <div className="text-[#a8895b] mb-1 text-2xl sm:text-3xl font-bold">24</div>
-            <p className="text-sm text-gray-700">Available 24/7</p>
-          </div>
-        </div>
-      </section>
-
-{/* Our Services Section */}
-<section className="bg-white py-24 px-6 sm:px-16">
-  <div className="text-center mb-16">
-    <h2 className="text-3xl sm:text-5xl font-bold text-gray-800 mb-3">Our Services</h2>
-    <div className="w-12 h-1 bg-[#A8895B] mx-auto mb-4 rounded-full"></div>
-    <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-      The exclusive way to travel. Step right in and sit back. We will take care of everything else.
+<section className="bg-white py-28 px-6 sm:px-16">
+  <div className="text-center mb-20">
+    <h2 className="text-4xl sm:text-5xl font-bold text-[#1C1C1C] mb-4 tracking-tight">
+      Our Premium Services
+    </h2>
+    <div className="w-20 h-[2px] bg-[#D4AF37] mx-auto mb-6 rounded-full"></div>
+    <p className="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+      Step into the world of luxury. Each service is tailored for elegance, punctuality, and unmatched comfort.
     </p>
   </div>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-    {/* Item 1 */}
-    <div className="flex flex-col items-center text-center">
-      <PlaneLanding size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Airport Transfer</h3>
-      <p className="text-sm text-gray-600">
-        Le Vince offer superb luxury transfer service in Kuala Lumpur. One way airport transfer from any point in KL / Selangor cost RM230 only.
-      </p>
-    </div>
-
-    {/* Item 2 */}
-    <div className="flex flex-col items-center text-center">
-      <Landmark size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Casino Transfer (Genting Highland)</h3>
-      <p className="text-sm text-gray-600">
-        Le Vince offer comfort ride to/from Genting Highland. We are the most popular and has been chosen by many VIP.
-      </p>
-    </div>
-
-    {/* Item 3 */}
-    <div className="flex flex-col items-center text-center">
-      <GlassWater size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Wedding</h3>
-      <p className="text-sm text-gray-600">
-        Have a wedding coming up? We provide luxury Alphard / Vellfire on rent to make your big day an unforgettable experience.
-      </p>
-    </div>
-
-    {/* Item 4 */}
-    <div className="flex flex-col items-center text-center">
-      <PartyPopper size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Special Events/VVIP Transfer</h3>
-      <p className="text-sm text-gray-600">
-        Classy ride from your pick up point to/from your special occasion like concert, parties, proms night, with our quality Alphard/Vellfire.
-      </p>
-    </div>
-
-    {/* Item 5 */}
-    <div className="flex flex-col items-center text-center">
-      <Building2 size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Corporate Events</h3>
-      <p className="text-sm text-gray-600">
-        Employee parties, team buildings, conference and more. You can trust our team at LeVince to make your corporate event one to remember.
-      </p>
-    </div>
-
-    {/* Item 6 */}
-    <div className="flex flex-col items-center text-center">
-      <BusFront size={36} className="text-[#A8895B] mb-3" />
-      <h3 className="text-lg font-semibold text-gray-800 mb-1">Corporate Transportation</h3>
-      <p className="text-sm text-gray-600">
-        Need to chauffeur your clients anywhere anytime? Focus on your business and let us take care of your clients with our stylish and comfortable rides 24/7.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-{/* gelerypage */}
-<section className="bg-white py-24 px-6 sm:px-16">
-  <div className="text-center mb-12">
-    <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-      The perfect balance between comfort, style, and luxury
-    </h2>
-    <div className="w-16 h-1 bg-[#A8895B] mx-auto rounded-full"></div>
-  </div>
-
-  <Slider
-    dots={true}
-    infinite={true}
-    speed={700}
-    slidesToShow={3}
-    slidesToScroll={1}
-    autoplay={true}
-    autoplaySpeed={4000}
-    arrows={true}
-    responsive={[
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
+    {/* Service Card */}
+    {[
       {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
+        icon: PlaneLanding,
+        title: "Airport Transfer",
+        desc: "Luxury pickups from/to all airports in Malaysia. Starting at RM230."
       },
       {
-        breakpoint: 640,
-        settings: { slidesToShow: 1 },
+        icon: Landmark,
+        title: "Casino Transfer",
+        desc: "Travel to Genting Highlands in style. Enjoy the ride, leave the traffic to us."
       },
-    ]}
-  >
-    {galleryImages.map((src, index) => (
-      <div key={index} className="px-4">
-        <div className="overflow-hidden rounded-2xl shadow-xl group">
-          <Image
-            src={src}
-            alt={`Gallery ${index}`}
-            width={600}
-            height={400}
-            className="w-full h-[400px] object-cover group-hover:scale-105 group-hover:brightness-110 transition-all duration-700"
-          />
-        </div>
+      {
+        icon: GlassWater,
+        title: "Wedding Chauffeur",
+        desc: "Celebrate your big day with our luxurious Alphard/Vellfire chauffeur service."
+      },
+      {
+        icon: PartyPopper,
+        title: "VVIP Event Rides",
+        desc: "For concerts, gala nights, and private occasions. Arrive like a celebrity."
+      },
+      {
+        icon: Building2,
+        title: "Corporate Events",
+        desc: "Reliable rides for conferences, meetings & company parties with high-end presentation."
+      },
+      {
+        icon: BusFront,
+        title: "Executive Transport",
+        desc: "Daily, weekly or monthly client transfers — always on time, always classy."
+      }
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="flex flex-col items-center text-center border border-[#eee] p-8 rounded-xl hover:shadow-xl transition-all duration-300"
+      >
+        <item.icon size={42} className="text-[#D4AF37] mb-4" />
+        <h3 className="text-xl font-semibold text-[#1C1C1C] mb-2">{item.title}</h3>
+        <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
       </div>
     ))}
-  </Slider>
+  </div>
 </section>
 
-{/* Booking / Enquiry Form Section */}
-{/* Booking / Enquiry Form Section */}
-<section className="bg-white py-24 px-4 sm:px-12" id="booking">
+<section className="bg-white py-24 px-6 sm:px-16">
+  <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#1C1C1C] mb-12">
+    Gallery
+  </h2>
+
   <div className="max-w-6xl mx-auto">
-    <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#2C2C2C] mb-2">
+    <Slider
+      dots={true}
+      infinite={true}
+      speed={700}
+      slidesToShow={3}
+      slidesToScroll={1}
+      autoplay={true}
+      autoplaySpeed={3500}
+      arrows={true}
+      responsive={[
+        { breakpoint: 1024, settings: { slidesToShow: 2 } },
+        { breakpoint: 640, settings: { slidesToShow: 1 } },
+      ]}
+    >
+      {galleryImages.map((src, index) => (
+        <div key={index} className="px-4">
+          <a href={src} target="_blank" rel="noopener noreferrer">
+            <div className="overflow-hidden rounded-2xl shadow-lg group cursor-pointer">
+              <Image
+                src={src}
+                alt={`Gallery Image ${index}`}
+                width={600}
+                height={400}
+                className="w-full h-[400px] object-cover group-hover:scale-105 transition duration-500"
+              />
+            </div>
+          </a>
+        </div>
+      ))}
+    </Slider>
+  </div>
+</section>
+
+
+<section className="bg-white py-28 px-4 sm:px-12" id="booking">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-4xl sm:text-5xl font-bold text-center text-[#1C1C1C] mb-4">
       Enquiry Form
     </h2>
-    <div className="w-16 h-[2px] bg-[#A8895B] mx-auto mb-12 rounded-full"></div>
+    <div className="w-16 h-[3px] bg-[#D4AF37] mx-auto mb-12 rounded-full"></div>
 
     {submitted ? (
-     <div className="bg-[#F6F4EF] border border-[#A8895B] rounded-xl p-6 text-center shadow-lg mb-12 animate-fade-in">
-  <div className="text-[#A8895B] text-2xl font-semibold mb-2 tracking-wide">
-     Booking Successful
-  </div>
-  <p className="text-gray-700 text-sm sm:text-base max-w-xl mx-auto">
-    Thank you for your enquiry. Our team will contact you shortly to arrange payment and confirm your  service.
-  </p>
-</div>
-
+      <div className="bg-[#F6F4EF] border border-[#D4AF37] rounded-xl p-6 text-center shadow-lg mb-12 animate-fade-in">
+        <div className="text-[#D4AF37] text-2xl font-semibold mb-2 tracking-wide">
+          Booking Successful
+        </div>
+        <p className="text-gray-700 text-base max-w-xl mx-auto">
+          Thank you for your enquiry. Our team will contact you shortly to arrange payment and confirm your service.
+        </p>
+      </div>
     ) : (
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-10">
         {/* Personal Info */}
         <div>
-          <h3 className="text-md font-semibold text-[#2C2C2C] mb-3">Personal Info</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h3 className="text-lg font-semibold text-[#1C1C1C] mb-4">Personal Info</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <input
               type="text"
               name="entry.241128140"
-              placeholder="Name*"
+              placeholder="Full Name*"
               required
-              className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
             <input
               type="tel"
               name="entry.1867721580"
-              placeholder="Phone*"
+              placeholder="Phone Number*"
               required
-              className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
             <input
               type="email"
               name="entry.1222550185"
-              placeholder="Email*"
+              placeholder="Email Address*"
               required
-              className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
           </div>
         </div>
 
         {/* Date & Location */}
         <div>
-          <h3 className="text-md font-semibold text-[#2C2C2C] mb-3">Date & Location</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <h3 className="text-lg font-semibold text-[#1C1C1C] mb-4">Date & Location</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <input
               type="text"
               name="entry.2022935511"
               placeholder="Pickup Location"
-              className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
             <input
               type="text"
               name="entry.378846262"
               placeholder="Drop-off Location"
-              className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
             <input
               type="date"
               name="entry.1182135585"
-              className="bg-[#FAF8F5] text-gray-700 px-4 py-3 rounded-md w-full focus:outline-none border"
+              className="bg-white border border-[#DDD] focus:border-[#D4AF37] text-gray-800 px-5 py-3 rounded-lg w-full shadow-sm focus:outline-none"
             />
           </div>
         </div>
@@ -457,8 +384,8 @@ const handleSubmit = async (e) => {
         <div>
           <textarea
             name="entry.1276024601"
-            placeholder="Message"
-            className="bg-[#FAF8F5] placeholder-gray-500 text-gray-700 px-4 py-3 rounded-md w-full min-h-[120px] focus:outline-none border"
+            placeholder="Your Message..."
+            className="bg-white border border-[#DDD] focus:border-[#D4AF37] placeholder-gray-400 text-gray-800 px-5 py-4 rounded-lg w-full min-h-[140px] shadow-sm focus:outline-none"
           />
         </div>
 
@@ -466,7 +393,7 @@ const handleSubmit = async (e) => {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-[#A8895B] hover:bg-yellow-500 text-white font-semibold py-3 px-8 rounded-md transition duration-300"
+            className="bg-[#D4AF37] hover:bg-[#c6a239] text-white text-base font-semibold py-3 px-10 rounded-full shadow-lg transition duration-300"
           >
             {loading ? "Submitting..." : "Request a Quote"}
           </button>
@@ -476,35 +403,11 @@ const handleSubmit = async (e) => {
   </div>
 </section>
 
-{/* Footer Section */}
-<footer className="bg-[#202241] py-6 relative">
-  <div className="max-w-7xl mx-auto px-4 text-center">
-    <p className="text-sm text-gray-300">
-      © Terus Maju Resources Malaysia. All Rights Reserved.
-    </p>
-  </div>
 
-  {/* Scroll to Top Button */}
-  <a
-    href="#"
-    className="absolute top-2 right-4 bg-white/10 hover:bg-white/20 p-2 rounded-md transition-all duration-300"
-  >
-    <svg
-      xmlns=""
-      className="h-4 w-4 text-[#A8895B]"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth="2"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-    </svg>
-  </a>
-</footer>
-
-
-
-
+      {/* FOOTER */}
+      <footer className="bg-[#1C1C1C] text-white py-6 text-center">
+        <p className="text-sm">© 2025 Malaysia Airport Cab Taxi. All rights reserved.</p>
+      </footer>
     </>
   );
 }
