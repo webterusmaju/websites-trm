@@ -57,13 +57,11 @@ export default function Navbar() {
               className="object-contain"
             />
             <div className="flex flex-col leading-tight">
-        <span className="text-sm sm:text-xl font-bold tracking-wide break-words text-wrap text-center sm:text-left">
-  MALAYSIA AIRPORT<br className="block sm:hidden" /> CABTAXI
-</span>
-
-
+              <span className="text-sm sm:text-xl font-bold tracking-wide break-words text-wrap text-center sm:text-left">
+                MALAYSIA AIRPORT<br className="block sm:hidden" /> CABTAXI
+              </span>
               <span className="text-[10px] sm:text-xs uppercase text-gray-400">
-              Your First-Class Airport Ride
+                Your First-Class Airport Ride
               </span>
             </div>
           </div>
@@ -111,7 +109,8 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm px-4 py-4 text-black animate-slide-in-down">
-          <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About</a>
+          <a href="/" className="block text-sm py-2 hover:text-[#A8895B]">Home</a>
+          <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About Us</a>
 
           <button
             onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
@@ -122,6 +121,7 @@ export default function Navbar() {
               className={`ml-2 h-4 w-4 transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`}
             />
           </button>
+
           {mobileDropdownOpen && (
             <div className="pl-4 space-y-2 transition-all duration-300 max-h-80 overflow-auto">
               {destinations.map((place, i) => (
@@ -136,7 +136,6 @@ export default function Navbar() {
             </div>
           )}
 
-         
           <a href="#" className="block text-sm py-2 hover:text-[#A8895B]">VIP Services</a>
           <a href="/contact" className="block text-sm py-2 hover:text-[#A8895B]">Contact Us</a>
 
