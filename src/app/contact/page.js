@@ -23,7 +23,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-gray-700 max-w-3xl mx-auto text-base sm:text-lg">
-            Reach out to us for bookings, custom requests, or VIP packages. Our team is ready 24/7 to assist you.
+            Reach out to us for bookings, custom requestetts, or VIP packages. Our team is ready 24/7 to assist you.
           </p>
         </motion.div>
 
