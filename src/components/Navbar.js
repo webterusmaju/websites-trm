@@ -91,7 +91,7 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
+             <a href="/booking" className="hover:text-[#A8895B] transition">Booking</a>
             <a href="/about" className="hover:text-[#A8895B] transition">About Us</a>
             <a href="#" className="hover:text-[#A8895B] transition">VIP Services</a>
             <a href="/contact" className="hover:text-[#A8895B] transition">Contact Us</a>
