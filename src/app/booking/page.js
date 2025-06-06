@@ -136,7 +136,7 @@ const carOptions = [
     *Prices may vary depending on distance, time of day, and specific requirements.
   </p>
 </section>
-br
+<br></br>
 
   <h2 className="text-3xl font-bold text-center text-[#1C1C1C] mb-10">
     Choose Your Car
