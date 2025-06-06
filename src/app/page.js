@@ -1,6 +1,11 @@
-// Luxury-style UI for Malaysia Airport Cab Taxi with golden, white, and matte black theme
-
 "use client";
+
+// Luxury-style UI for Malaysia Airport Cab Taxi with golden, white, and matte black theme
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CarSlider from "@/components/CarSlider";
+
+
 
 import Navbar from "../components/Navbar";
 import Image from "next/image";
@@ -82,6 +87,7 @@ const handleSubmit = async (e) => {
       <Navbar />
 
       {/* HERO SECTION */}
+
       <section className="relative min-h-screen w-full text-white">
         <Image
           src="/landing/airport1.png"
@@ -92,12 +98,12 @@ const handleSubmit = async (e) => {
           priority
         />
         <div className="absolute inset-0 flex flex-col justify-center items-start px-6 md:px-20 z-10 max-w-6xl">
-          <p className="uppercase text-sm tracking-widest text-white/90 mb-2">Exceptional</p>
+          <p className="uppercase text-sm tracking-widest text-white/90 mb-2">Your Trusted Partner for All Airport Transfers</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            Malaysia Airport CabTaxi
+           Welcome to Malaysia Airport CabTaxi
           </h1>
           <p className="text-sm md:text-base text-white/80 mb-6 max-w-lg">
-            Experience our bespoke firsssst-class chauffeur service with the largest fleet in Malaysia.
+            Whether you're traveling solo, with family, or in a group, we offer a wide selection of vehicles to ensure a comfortable and reliable journey to and from all major airports in Malaysia.
           </p>
           <a
             href="#booking"
@@ -118,46 +124,80 @@ const handleSubmit = async (e) => {
           </a>
         </div>
       </section>
+       <CarSlider />
 
-      {/* WHY CHOOSE US */}
-      <section className="bg-white py-20 px-6 sm:px-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1C1C1C] mb-12">Why Choose Us</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {slides.map((item, idx) => (
-            <div key={idx} className="bg-white border border-[#E5E5E5] rounded-xl p-6 shadow-sm hover:shadow-xl transition-all">
-              <h3 className="text-lg font-semibold text-[#D4AF37] mb-3">{item.title}</h3>
-              <p className="text-sm text-gray-700">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     {/* WHY CHOOSE US */}
+<section className="bg-white py-20 px-6 sm:px-16">
+  <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1C1C1C] mb-12">
+    Why Choose Malaysia Airport CabTaxi?
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {[
+      {
+        title: " Versatility at Its Finest",
+        desc: "From sleek sedans to majestic MPVs and spacious vans, we cater to every taste and tribe — whether you seek luxury or low-cost, solo rides or group convoys."
+      },
+      {
+        title: " Impeccable Safety, Relentless Reliability",
+        desc: "Our professionally trained chauffeurs are more than just drivers — they're guardians of your punctuality, protectors of your peace of mind."
+      },
+      {
+        title: " Transparent Fare, No Surprises",
+        desc: "No gimmicks. No hidden surcharges. Just fair, flat rates with crystal-clear clarity — because trust is our true currency."
+      },
+      {
+        title: " Round-the-Clock Ride Readiness",
+        desc: "Flight at 3AM? No problem. Our wheels turn whenever you need — day, night, or somewhere in between."
+      },
+      {
+        title: " Frictionless Booking, Instant Confirmation",
+        desc: "Forget clunky forms. Our smart, streamlined booking makes reserving your ride faster than saying “KLIA, please!”"
+      },
+      {
+        title: " Eco-Conscious Options Available",
+        desc: "Prefer a hybrid or fuel-efficient ride? We got it. Comfort meets conscience with our evolving green fleet."
+      }
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="bg-white border border-[#E5E5E5] rounded-xl p-6 shadow-sm hover:shadow-xl transition-all"
+      >
+        <h3 className="text-lg font-semibold text-[#D4AF37] mb-3">{item.title}</h3>
+        <p className="text-sm text-gray-700">{item.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
-      {/* PREMIUM VEHICLE SLIDER */}
-      <section className="bg-[#f9f9f9] py-20 px-6 sm:px-16">
-        <h2 className="text-4xl font-bold text-center text-[#1C1C1C] mb-16">Our Premium Fleet</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <Slider {...settings} className="w-full max-w-xl mx-auto">
-            {slides.map((item, idx) => (
-              <div key={idx} className="group cursor-pointer overflow-hidden rounded-xl">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={800}
-                  height={500}
-                  className="w-full h-[400px] object-cover transition duration-500 group-hover:scale-105"
-                />
-              </div>
-            ))}
-          </Slider>
-          <div className="text-center md:text-left px-6">
-            <h3 className="text-2xl font-bold text-[#D4AF37] mb-4">{slides[current].title}</h3>
-            <p className="text-[#2C2C2C] mb-6">{slides[current].desc}</p>
-            <a href="#booking" className="bg-[#D4AF37] text-white py-2 px-6 rounded-full shadow hover:shadow-lg">
-              Request Booking
-            </a>
-          </div>
-        </div>
-      </section>
+
+{/* PROMOTIONAL MESSAGE */}
+<section className="bg-[#fef9f1] text-[#1C1C1C] py-20 px-6 sm:px-16 text-center">
+  <div className="max-w-4xl mx-auto space-y-6">
+    <h2 className="text-3xl sm:text-4xl font-bold leading-tight text-[#D4AF37]">
+      Not Just a Ride — An Arrival in Style.
+    </h2>
+    <p className="text-lg sm:text-xl font-medium text-gray-800">
+      Whether you're a budget backpacker or a high-flyer on a business mission,<br />
+      <span className="font-semibold text-[#1C1C1C]">Malaysia Airport CabTaxi</span> transforms your airport transfer into an effortless experience of class, comfort, and care.
+    </p>
+    <p className="text-gray-700 text-base">
+      From <span className="font-bold text-[#D4AF37]">RM95</span>, your journey begins the moment you book.
+    </p>
+    <p className="text-gray-700 text-base">
+      Ride smart. Ride safe. Ride your way.
+    </p>
+    <div className="pt-4">
+      <a
+        href="/booking"
+        className="inline-block bg-[#D4AF37] hover:bg-[#c5a038] text-white font-semibold py-3 px-10 rounded-full shadow-md transition"
+      >
+        Book Now
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
 
 <section className="relative h-screen text-white flex items-center justify-center text-center">
@@ -270,6 +310,30 @@ const handleSubmit = async (e) => {
   </div>
 </section>
 
+<section className="bg-white py-20 px-6 sm:px-16 text-center">
+  <div className="max-w-4xl mx-auto space-y-6">
+    <h2 className="text-3xl sm:text-4xl font-bold text-[#1C1C1C]">Your Safety is Our Priority</h2>
+    <p className="text-lg text-gray-700">
+      We uphold the highest standards of cleanliness and hygiene for every ride.
+    </p>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left text-gray-800 pt-6">
+      <div className="border rounded-lg p-6 shadow-sm bg-[#fefefe]">
+        <h3 className="font-semibold text-lg mb-2 text-[#D4AF37]">Daily Vehicle Sanitization</h3>
+        <p className="text-sm">All vehicles are cleaned and sanitized thoroughly before every trip.</p>
+      </div>
+      <div className="border rounded-lg p-6 shadow-sm bg-[#fefefe]">
+        <h3 className="font-semibold text-lg mb-2 text-[#D4AF37]">Health-Conscious Drivers</h3>
+        <p className="text-sm">Our drivers follow strict health protocols, including wearing masks at all times.</p>
+      </div>
+      <div className="border rounded-lg p-6 shadow-sm bg-[#fefefe]">
+        <h3 className="font-semibold text-lg mb-2 text-[#D4AF37]">Cashless Payments Available</h3>
+        <p className="text-sm">Enjoy safe and contactless transactions via our secure online booking system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section className="bg-white py-24 px-6 sm:px-16">
   <h2 className="text-3xl sm:text-5xl font-bold text-center text-[#1C1C1C] mb-12">
     Gallery
@@ -308,6 +372,16 @@ const handleSubmit = async (e) => {
     </Slider>
   </div>
 </section>
+
+
+<section className="bg-[#D4AF37] text-white py-6 px-6 sm:px-16 text-center">
+  <div className="max-w-4xl mx-auto">
+    <p className="text-lg sm:text-xl font-semibold">
+      First-time user? Use code <span className="underline font-bold">WELCOME15</span> at checkout to get <span className="font-bold">RM15 off</span> your first ride.
+    </p>
+  </div>
+</section>
+
 
 
 <section className="bg-white py-28 px-4 sm:px-12" id="booking">

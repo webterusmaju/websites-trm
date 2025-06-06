@@ -6,21 +6,113 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function BookingPage() {
-  const carOptions = [
-    { name: "Perodua Bezza 1.3", price: "RM100.00 / Day", image: "/car-img/bezza.png" },
-    { name: "Proton Saga 1.3", price: "RM100.00 / Day", image: "/car-img/saga.png" },
-    { name: "Toyota Vios 1.5", price: "RM120.00 / Day", image: "/car-img/vios.png" },
-    { name: "Honda City 1.5", price: "RM120.00 / Day", image: "/car-img/honda-city.png" },
-    { name: "Toyota Innova 2.0", price: "RM160.00 / Day", image: "/car-img/innova.png" },
-    { name: "Toyota Voxy 2.0", price: "RM160.00 / Day", image: "/car-img/voxy.png" },
-    { name: "Toyota Camry 2.5", price: "RM180.00 / Day", image: "/car-img/camry.png" },
-    { name: "Honda Accord 2.4", price: "RM180.00 / Day", image: "/car-img/accord.png" },
-    { name: "Toyota Vellfire 3.5", price: "RM220.00 / Day", image: "/car-img/vellfire.png" },
-    { name: "Grand Hyundai Starex 2.5", price: "RM250.00 / Day", image: "/car-img/straxe.png" },
-    { name: "Toyota Hiace 3.0", price: "RM300.00 / Day", image: "/car-img/heice.png" },
-    { name: "Mercedes-Benz C200", price: "RM400.00 / Day", image: "/car-img/mercedes.png" },
-    { name: "BMW", price: "RM400.00 / Day", image: "/car-img/bmw.png" },
-  ];
+const carOptions = [
+  {
+    name: "Perodua Bezza 1.3",
+    price: "RM100.00 / Day",
+    image: "/car-img/bezza.png",
+    category: "Economy Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Budget-conscious travelers"
+  },
+  {
+    name: "Proton Saga 1.3",
+    price: "RM100.00 / Day",
+    image: "/car-img/saga.png",
+    category: "Economy Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Budget-conscious travelers"
+  },
+  {
+    name: "Toyota Vios 1.5",
+    price: "RM120.00 / Day",
+    image: "/car-img/vios.png",
+    category: "Economy Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Budget-conscious travelers"
+  },
+  {
+    name: "Honda City 1.5",
+    price: "RM120.00 / Day",
+    image: "/car-img/honda-city.png",
+    category: "Economy Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Budget-conscious travelers"
+  },
+  {
+    name: "Toyota Camry 2.5",
+    price: "RM180.00 / Day",
+    image: "/car-img/camry.png",
+    category: "Standard Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Business travelers seeking comfort"
+  },
+  {
+    name: "Honda Accord 2.4",
+    price: "RM180.00 / Day",
+    image: "/car-img/accord.png",
+    category: "Standard Sedan",
+    capacity: "Up to 4 passengers",
+    ideal: "Business travelers seeking comfort"
+  },
+  {
+    name: "Toyota Innova 2.0",
+    price: "RM160.00 / Day",
+    image: "/car-img/innova.png",
+    category: "Compact MPV",
+    capacity: "Up to 5 passengers",
+    ideal: "Small families or groups"
+  },
+  {
+    name: "Toyota Voxy 2.0",
+    price: "RM160.00 / Day",
+    image: "/car-img/voxy.png",
+    category: "Compact MPV",
+    capacity: "Up to 5 passengers",
+    ideal: "Small families or groups"
+  },
+  {
+    name: "Toyota Vellfire 3.5",
+    price: "RM220.00 / Day",
+    image: "/car-img/vellfire.png",
+    category: "Premium MPV",
+    capacity: "Up to 6 passengers",
+    ideal: "Travelers desiring luxury and space"
+  },
+  {
+    name: "Grand Hyundai Starex 2.5",
+    price: "RM250.00 / Day",
+    image: "/car-img/straxe.png",
+    category: "Family Van / Minivan",
+    capacity: "Up to 10 passengers",
+    ideal: "Large families or group travel"
+  },
+  {
+    name: "Toyota Hiace 3.0",
+    price: "RM300.00 / Day",
+    image: "/car-img/heice.png",
+    category: "VIP Van",
+    capacity: "Up to 16 passengers",
+    ideal: "Corporate events, tours, or large groups"
+  },
+  {
+    name: "Mercedes-Benz E200",
+    price: "RM400.00 / Day",
+    image: "/car-img/mercedes.png",
+    category: "Luxury Sedan",
+    capacity: "Up to 3 passengers",
+    ideal: "VIPs and special occasions"
+  },
+  {
+    name: "BMW",
+    price: "RM400.00 / Day",
+    image: "/car-img/bmw.png",
+    category: "Luxury Sedan",
+    capacity: "Up to 3 passengers",
+    ideal: "VIPs and special occasions"
+  }
+];
+
 
   const [selectedCar, setSelectedCar] = useState(carOptions[0].name);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -29,30 +121,72 @@ export default function BookingPage() {
     <>
       <Navbar />
 
+      
+
       {/* Car Section */}
-      <section className="bg-white py-16 px-6 sm:px-12">
-        <h2 className="text-3xl font-bold text-center text-[#1C1C1C] mb-10">Choose Your Car</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {carOptions.map((car, i) => (
-            <div key={i} className="border rounded-xl shadow-lg overflow-hidden bg-white">
-              <Image src={car.image} alt={car.name} width={800} height={500} className="w-full h-64 object-cover" />
-              <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold mb-1 text-gray-800">{car.name}</h3>
-                <p className="text-gray-600 mb-4">{car.price}</p>
-                <button
-                  onClick={() => {
-                    setSelectedCar(car.name);
-                    document.getElementById("urgent-booking").scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="bg-[#D4AF37] hover:bg-[#c5a038] text-white font-semibold py-2 px-6 rounded-full"
-                >
-                  Book Now
-                </button>
-              </div>
-            </div>
-          ))}
+<section className="bg-white py-16 px-6 sm:px-12">
+    {/* Intro Text Section */}
+<section className="bg-white px-6 sm:px-12 pt-10 max-w-5xl mx-auto text-center">
+  <h2 className="text-3xl font-bold text-[#1C1C1C] mb-4">Our Diverse Fleet & Pricing</h2>
+  <p className="text-gray-600 text-base">
+    We provide a wide selection of vehicles tailored for solo travelers, small families, corporate groups, or large tours.
+    Choose your ride based on comfort, capacity, and budget.
+  </p>
+  <p className="text-gray-500 text-sm mt-2 italic">
+    *Prices may vary depending on distance, time of day, and specific requirements.
+  </p>
+</section>
+br
+
+  <h2 className="text-3xl font-bold text-center text-[#1C1C1C] mb-10">
+    Choose Your Car
+  </h2>
+  
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    {carOptions.map((car, i) => (
+      <div
+        key={i}
+        className="border rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition"
+      >
+        <Image
+          src={car.image}
+          alt={car.name}
+          width={800}
+          height={500}
+          className="w-full h-64 object-cover"
+        />
+
+        <div className="p-6 text-center space-y-2">
+          {/* Badge Category */}
+          <span className="inline-block bg-[#D4AF37] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+            {car.category}
+          </span>
+
+          <h3 className="text-xl font-bold text-gray-800">{car.name}</h3>
+          <p className="text-[#D4AF37] font-semibold">{car.price}</p>
+
+          <p className="text-gray-600 text-sm">
+            <strong>Capacity:</strong> {car.capacity}
+          </p>
+          <p className="text-gray-600 text-sm italic">{car.ideal}</p>
+
+          <button
+            onClick={() => {
+              setSelectedCar(car.name);
+              document.getElementById("urgent-booking").scrollIntoView({ behavior: "smooth" });
+            }}
+            className="mt-4 bg-[#D4AF37] hover:bg-[#c5a038] text-white font-semibold py-2 px-6 rounded-full transition"
+          >
+            Book Now
+          </button>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       {/* Booking Form */}
       <section id="urgent-booking" className="bg-[#1e1e1e] py-16 px-6 sm:px-12">
@@ -159,6 +293,7 @@ export default function BookingPage() {
           </form>
         </div>
       </section>
+      
     </>
   );
 }
