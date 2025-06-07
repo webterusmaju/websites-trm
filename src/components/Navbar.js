@@ -91,7 +91,8 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-             <a href="/booking" className="hover:text-[#A8895B] transition">Booking</a>
+            
+            <a href="/booking" className="hover:text-[#A8895B] transition">Booking</a>
             <a href="/about" className="hover:text-[#A8895B] transition">About Us</a>
             <a href="#" className="hover:text-[#A8895B] transition">VIP Services</a>
             <a href="/contact" className="hover:text-[#A8895B] transition">Contact Us</a>
@@ -110,6 +111,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm px-4 py-4 text-black animate-slide-in-down">
           <a href="/" className="block text-sm py-2 hover:text-[#A8895B]">Home</a>
+          <a href="/booking" className="block text-sm py-2 hover:text-[#A8895B]">Booking</a>
           <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About Us</a>
 
           <button
