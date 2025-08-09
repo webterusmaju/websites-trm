@@ -49,7 +49,7 @@ const carOptions = [
   },
   {
     name: "Voxy/Serena/Spada/Estima",
-    price: "RM160.00 /Per Trip",
+    price: "RM180.00 /Per Trip",
     image: "/car-img/voxy.png",
     category: "Compact MPV",
     capacity: "Up to 5 passengers",
