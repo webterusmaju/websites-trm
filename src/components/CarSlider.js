@@ -2,6 +2,7 @@
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // Icon arrow
 
 const cars = [
   {
@@ -11,13 +12,6 @@ const cars = [
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
-  // {
-  //   name: "Bezza/Saga/Myvi",
-  //   price: "RM100.00 / Per Trip",
-  //   image: "/car-img/saga.png",
-  //   category: "Economy Sedan",
-  //   capacity: "Up to 4 passengers"
-  // },
   {
     name: "Vios/Honda City",
     price: "RM120.00 / Per Trip",
@@ -25,13 +19,6 @@ const cars = [
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
-  // {
-  //   name: "Vios/Honda City",
-  //   price: "RM120.00 / Per Trip",
-  //   image: "/car-img/honda-city.png",
-  //   category: "Economy Sedan",
-  //   capacity: "Up to 4 passengers"
-  // },
   {
     name: "Innova/Alza/Aruz",
     price: "RM160.00 / Per Trip",
@@ -53,13 +40,6 @@ const cars = [
     category: "Standard Sedan",
     capacity: "Up to 4 passengers"
   },
-  // {
-  //   name: "Honda Accord 2.4",
-  //   price: "RM180.00 / Per Trip",
-  //   image: "/car-img/accord.png",
-  //   category: "Standard Sedan",
-  //   capacity: "Up to 4 passengers"
-  // },
   {
     name: "Vellfire/Alphard",
     price: "RM220.00 / Per Trip",
@@ -97,6 +77,29 @@ const cars = [
   }
 ];
 
+// Custom arrow components
+function NextArrow({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#D4AF37] hover:bg-[#c5a038] p-2 rounded-full shadow-lg z-10"
+    >
+      <ChevronRight className="text-white w-5 h-5" />
+    </button>
+  );
+}
+
+function PrevArrow({ onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#D4AF37] hover:bg-[#c5a038] p-2 rounded-full shadow-lg z-10"
+    >
+      <ChevronLeft className="text-white w-5 h-5" />
+    </button>
+  );
+}
+
 export default function CarSlider() {
   const settings = {
     dots: false,
@@ -104,15 +107,16 @@ export default function CarSlider() {
     speed: 600,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
-      { breakpoint: 1024, settings: { slidesToShow: 2 } }
+      { breakpoint: 768, settings: { slidesToShow: 1, arrows: true } },
+      { breakpoint: 1024, settings: { slidesToShow: 2, arrows: true } }
     ]
   };
 
   return (
-    <section className="bg-[#f8f8f8] py-16 px-6 sm:px-12">
+    <section className="bg-[#f8f8f8] py-16 px-6 sm:px-12 relative">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-bold text-[#1C1C1C]">
           <span className="text-[#D4AF37]">Malaysia</span> Airport CabTaxi
