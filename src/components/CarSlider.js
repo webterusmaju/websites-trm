@@ -5,35 +5,35 @@ import Link from "next/link";
 
 const cars = [
   {
-    name: "Perodua Bezza 1.3",
+    name: "Bezza/Saga/Myvi",
     price: "RM100.00 / Per Trip",
     image: "/car-img/bezza.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
-    name: "Proton Saga 1.3",
+    name: "Bezza/Saga/Myvi",
     price: "RM100.00 / Per Trip",
     image: "/car-img/saga.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
-    name: "Toyota Vios 1.5",
+    name: "Vios/Honda City",
     price: "RM120.00 / Per Trip",
     image: "/car-img/vios.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
-    name: "Honda City 1.5",
+    name: "Vios/Honda City",
     price: "RM120.00 / Per Trip",
     image: "/car-img/honda-city.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
-    name: "Toyota Innova 2.0",
+    name: "Innova/Alza/Aruz",
     price: "RM160.00 / Per Trip",
     image: "/car-img/innova.png",
     category: "Compact MPV",
@@ -61,14 +61,14 @@ const cars = [
     capacity: "Up to 4 passengers"
   },
   {
-    name: "Toyota Vellfire 3.5",
+    name: "Vellfire/Alphard",
     price: "RM220.00 / Per Trip",
     image: "/car-img/vellfire.png",
     category: "Premium MPV",
     capacity: "Up to 6 passengers"
   },
   {
-    name: "Grand Hyundai Starex 2.5",
+    name: "Staria/Starex",
     price: "RM250.00 / Per Trip",
     image: "/car-img/straxe.png",
     category: "Family Van",
