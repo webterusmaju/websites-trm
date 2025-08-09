@@ -119,7 +119,16 @@ const carOptions = [
   <p className="text-gray-500 text-sm mt-2 italic">
     *Prices may vary depending on distance, time of day, and specific requirements.
   </p>
+
+  {/* 🔹 Remark untuk awareness */}
+  <p className="text-red-600 text-sm mt-4 font-semibold">
+    *All prices listed are from Kuala Lumpur International Airport (KLIA/KLIA2/Subang) to Klang Valley only.
+    Not applicable for other destinations (e.g., Singapore).
+  </p>
 </section>
+
+
+
 <br></br>
 
   <h2 className="text-3xl font-bold text-center text-[#1C1C1C] mb-10">
