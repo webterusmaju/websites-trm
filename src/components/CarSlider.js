@@ -47,19 +47,19 @@ const cars = [
     capacity: "Up to 5 passengers"
   },
   {
-    name: "Toyota Camry 2.5",
+    name :"Accord/Camry/Civic/Altis",
     price: "RM180.00 / Per Trip",
     image: "/car-img/camry.png",
     category: "Standard Sedan",
     capacity: "Up to 4 passengers"
   },
-  {
-    name: "Honda Accord 2.4",
-    price: "RM180.00 / Per Trip",
-    image: "/car-img/accord.png",
-    category: "Standard Sedan",
-    capacity: "Up to 4 passengers"
-  },
+  // {
+  //   name: "Honda Accord 2.4",
+  //   price: "RM180.00 / Per Trip",
+  //   image: "/car-img/accord.png",
+  //   category: "Standard Sedan",
+  //   capacity: "Up to 4 passengers"
+  // },
   {
     name: "Vellfire/Alphard",
     price: "RM220.00 / Per Trip",

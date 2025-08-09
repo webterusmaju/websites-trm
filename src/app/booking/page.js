@@ -24,21 +24,21 @@ const carOptions = [
     ideal: "Budget-conscious travelers"
   },
   {
-    name: "Toyota Camry 2.5",
+    name :"Accord/Camry/Civic/Altis",
     price: "RM180.00 /Per Trip",
     image: "/car-img/camry.png",
     category: "Standard Sedan",
     capacity: "Up to 4 passengers",
     ideal: "Business travelers seeking comfort"
   },
-  {
-    name: "Honda Accord 2.4",
-    price: "RM180.00 /Per Trip",
-    image: "/car-img/accord.png",
-    category: "Standard Sedan",
-    capacity: "Up to 4 passengers",
-    ideal: "Business travelers seeking comfort"
-  },
+  // {
+  //   name: "Accord/Camry/Civic/Altis",
+  //   price: "RM180.00 /Per Trip",
+  //   image: "/car-img/accord.png",
+  //   category: "Standard Sedan",
+  //   capacity: "Up to 4 passengers",
+  //   ideal: "Business travelers seeking comfort"
+  // },
   {
     name: "Innova/Alza/Aruz",
     price: "RM160.00 /Per Trip",
@@ -48,7 +48,7 @@ const carOptions = [
     ideal: "Small families or groups"
   },
   {
-    name: "Toyota Voxy 2.0",
+    name: "Voxy/Serena/Spada/Estima",
     price: "RM160.00 /Per Trip",
     image: "/car-img/voxy.png",
     category: "Compact MPV",
