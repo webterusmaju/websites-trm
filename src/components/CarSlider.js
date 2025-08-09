@@ -6,91 +6,91 @@ import Link from "next/link";
 const cars = [
   {
     name: "Perodua Bezza 1.3",
-    price: "RM100.00 / Day",
+    price: "RM100.00 / Per Trip",
     image: "/car-img/bezza.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Proton Saga 1.3",
-    price: "RM100.00 / Day",
+    price: "RM100.00 / Per Trip",
     image: "/car-img/saga.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Toyota Vios 1.5",
-    price: "RM120.00 / Day",
+    price: "RM120.00 / Per Trip",
     image: "/car-img/vios.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Honda City 1.5",
-    price: "RM120.00 / Day",
+    price: "RM120.00 / Per Trip",
     image: "/car-img/honda-city.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Toyota Innova 2.0",
-    price: "RM160.00 / Day",
+    price: "RM160.00 / Per Trip",
     image: "/car-img/innova.png",
     category: "Compact MPV",
     capacity: "Up to 5 passengers"
   },
   {
     name: "Toyota Voxy 2.0",
-    price: "RM160.00 / Day",
+    price: "RM160.00 / Per Trip",
     image: "/car-img/voxy.png",
     category: "Compact MPV",
     capacity: "Up to 5 passengers"
   },
   {
     name: "Toyota Camry 2.5",
-    price: "RM180.00 / Day",
+    price: "RM180.00 / Per Trip",
     image: "/car-img/camry.png",
     category: "Standard Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Honda Accord 2.4",
-    price: "RM180.00 / Day",
+    price: "RM180.00 / Per Trip",
     image: "/car-img/accord.png",
     category: "Standard Sedan",
     capacity: "Up to 4 passengers"
   },
   {
     name: "Toyota Vellfire 3.5",
-    price: "RM220.00 / Day",
+    price: "RM220.00 / Per Trip",
     image: "/car-img/vellfire.png",
     category: "Premium MPV",
     capacity: "Up to 6 passengers"
   },
   {
     name: "Grand Hyundai Starex 2.5",
-    price: "RM250.00 / Day",
+    price: "RM250.00 / Per Trip",
     image: "/car-img/straxe.png",
     category: "Family Van",
     capacity: "Up to 10 passengers"
   },
   {
     name: "Toyota Hiace 3.0",
-    price: "RM300.00 / Day",
+    price: "RM300.00 / Per Trip",
     image: "/car-img/heice.png",
     category: "VIP Van",
     capacity: "Up to 16 passengers"
   },
   {
     name: "Mercedes-Benz E200",
-    price: "RM400.00 / Day",
+    price: "RM400.00 / Per trip",
     image: "/car-img/mercedes.png",
     category: "Luxury Sedan",
     capacity: "Up to 3 passengers"
   },
   {
     name: "BMW 5 Series",
-    price: "RM400.00 / Day",
+    price: "RM400.00 / Per Trip",
     image: "/car-img/bmw.png",
     category: "Luxury Sedan",
     capacity: "Up to 3 passengers"
