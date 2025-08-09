@@ -16,25 +16,9 @@ const carOptions = [
     ideal: "Budget-conscious travelers"
   },
   {
-    name: "Bezza/Saga/Myvi",
-    price: "RM100.00 /Per Trip",
-    image: "/car-img/saga.png",
-    category: "Economy Sedan",
-    capacity: "Up to 4 passengers",
-    ideal: "Budget-conscious travelers"
-  },
-  {
     name: "Vios/Honda City",
     price: "RM120.00 /Per Trip",
     image: "/car-img/vios.png",
-    category: "Economy Sedan",
-    capacity: "Up to 4 passengers",
-    ideal: "Budget-conscious travelers"
-  },
-  {
-    name: "Vios/Honda City",
-    price: "RM120.00 /Per Trip",
-    image: "/car-img/honda-city.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers",
     ideal: "Budget-conscious travelers"

@@ -11,13 +11,13 @@ const cars = [
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
-  {
-    name: "Bezza/Saga/Myvi",
-    price: "RM100.00 / Per Trip",
-    image: "/car-img/saga.png",
-    category: "Economy Sedan",
-    capacity: "Up to 4 passengers"
-  },
+  // {
+  //   name: "Bezza/Saga/Myvi",
+  //   price: "RM100.00 / Per Trip",
+  //   image: "/car-img/saga.png",
+  //   category: "Economy Sedan",
+  //   capacity: "Up to 4 passengers"
+  // },
   {
     name: "Vios/Honda City",
     price: "RM120.00 / Per Trip",
@@ -25,13 +25,13 @@ const cars = [
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"
   },
-  {
-    name: "Vios/Honda City",
-    price: "RM120.00 / Per Trip",
-    image: "/car-img/honda-city.png",
-    category: "Economy Sedan",
-    capacity: "Up to 4 passengers"
-  },
+  // {
+  //   name: "Vios/Honda City",
+  //   price: "RM120.00 / Per Trip",
+  //   image: "/car-img/honda-city.png",
+  //   category: "Economy Sedan",
+  //   capacity: "Up to 4 passengers"
+  // },
   {
     name: "Innova/Alza/Aruz",
     price: "RM160.00 / Per Trip",
@@ -40,8 +40,8 @@ const cars = [
     capacity: "Up to 5 passengers"
   },
   {
-    name: "Toyota Voxy 2.0",
-    price: "RM160.00 / Per Trip",
+    name: "Voxy/Serena/Spada/estima",
+    price: "RM180.00 / Per Trip",
     image: "/car-img/voxy.png",
     category: "Compact MPV",
     capacity: "Up to 5 passengers"
