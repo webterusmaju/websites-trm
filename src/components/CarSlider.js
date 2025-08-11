@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"; // Icon arrow
 const cars = [
   {
     name: "Bezza/Saga/Myvi",
-    price: "RM100.00 / Per Trip",
+    price: "RM99.00 / Per Trip",
     image: "/car-img/bezza.png",
     category: "Economy Sedan",
     capacity: "Up to 4 passengers"

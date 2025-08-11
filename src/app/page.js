@@ -181,7 +181,7 @@ const handleSubmit = async (e) => {
       <span className="font-semibold text-[#1C1C1C]">Malaysia Airport CabTaxi</span> transforms your airport transfer into an effortless experience of class, comfort, and care.
     </p>
     <p className="text-gray-700 text-base">
-      From <span className="font-bold text-[#D4AF37]">RM95</span>, your journey begins the moment you book.
+      From <span className="font-bold text-[#D4AF37]">RM99</span>, your journey begins the moment you book.
     </p>
     <p className="text-gray-700 text-base">
       Ride smart. Ride safe. Ride your way.

@@ -26,7 +26,7 @@ export default function BookingPage() {
   };
 
   const carOptions = [
-    { name: "Bezza/Saga/Myvi", price: "RM100.00 /Per Trip", image: "/car-img/bezza.png", category: "Economy Sedan", capacity: "Up to 4 passengers", ideal: "Budget-conscious travelers" },
+    { name: "Bezza/Saga/Myvi", price: "RM99.00 /Per Trip", image: "/car-img/bezza.png", category: "Economy Sedan", capacity: "Up to 4 passengers", ideal: "Budget-conscious travelers" },
     { name: "Vios/Honda City", price: "RM120.00 /Per Trip", image: "/car-img/vios.png", category: "Economy Sedan", capacity: "Up to 4 passengers", ideal: "Budget-conscious travelers" },
     { name: "Accord/Camry/Civic/Altis", price: "RM180.00 /Per Trip", image: "/car-img/camry.png", category: "Standard Sedan", capacity: "Up to 4 passengers", ideal: "Business travelers seeking comfort" },
     { name: "Innova/Alza/Aruz", price: "RM160.00 /Per Trip", image: "/car-img/innova.png", category: "Compact MPV", capacity: "Up to 5 passengers", ideal: "Small families or groups" },
