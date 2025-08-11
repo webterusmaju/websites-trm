@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { ChevronDown, Globe, Menu, X, Facebook } from "lucide-react";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -42,12 +42,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-white/80 backdrop-blur-md shadow-md text-black" : "bg-transparent text-white"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 backdrop-blur-md shadow-md text-black"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between h-16">
-          {/* Logo + Brand Name */}
+          {/* Kiri: Logo + Brand */}
           <div className="flex items-center space-x-3 animate-fade-in py-1 sm:py-2">
             <Image
               src="/landing/Logo.png"
@@ -58,7 +62,8 @@ export default function Navbar() {
             />
             <div className="flex flex-col leading-tight">
               <span className="text-sm sm:text-xl font-bold tracking-wide break-words text-wrap text-center sm:text-left">
-                MALAYSIA AIRPORT<br className="block sm:hidden" /> CABTAXI
+                MALAYSIA AIRPORT
+                <br className="block sm:hidden" /> CABTAXI
               </span>
               <span className="text-[10px] sm:text-xs uppercase text-gray-400">
                 Your First-Class Airport Ride
@@ -66,7 +71,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Tengah: Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center text-sm">
             <a href="/" className="hover:text-[#A8895B] transition">Home</a>
 
@@ -91,16 +96,33 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-            
+
             <a href="/booking" className="hover:text-[#A8895B] transition">Booking</a>
             <a href="/about" className="hover:text-[#A8895B] transition">About Us</a>
             <a href="#" className="hover:text-[#A8895B] transition">VIP Services</a>
             <a href="/contact" className="hover:text-[#A8895B] transition">Contact Us</a>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          {/* Kanan: Ikon Facebook (desktop) + Toggle Mobile */}
+          <div className="flex items-center gap-3">
+            {/* Ikon FB hanya desktop */}
+            <a
+              href="https://www.facebook.com/profile.php?id=61575938865249"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hidden md:inline-flex items-center justify-center h-9 w-9 rounded-full border border-current/20 hover:border-current/40 hover:bg-current/10 transition"
+              title="Follow us on Facebook"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden inline-flex items-center justify-center rounded-lg p-2 hover:bg-black/10 hover:text-black"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
@@ -110,6 +132,17 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-sm px-4 py-4 text-black animate-slide-in-down">
+          {/* FB link on mobile (atas sekali) */}
+          <a
+            href="https://www.facebook.com/profile.php?id=61575938865249"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 py-2 text-blue-700 hover:opacity-80"
+          >
+            <Facebook className="h-4 w-4" />
+            <span>Facebook</span>
+          </a>
+
           <a href="/" className="block text-sm py-2 hover:text-[#A8895B]">Home</a>
           <a href="/booking" className="block text-sm py-2 hover:text-[#A8895B]">Booking</a>
           <a href="/about" className="block text-sm py-2 hover:text-[#A8895B]">About Us</a>
