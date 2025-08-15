@@ -31,7 +31,7 @@ export default function BookingPage() {
     { name: "Accord/Camry/Civic/Altis", price: "RM180.00 /Per Trip", image: "/car-img/camry.png", category: "Standard Sedan", capacity: "Up to 4 passengers", ideal: "Business travelers seeking comfort" },
     { name: "Innova/Alza/Aruz", price: "RM160.00 /Per Trip", image: "/car-img/innova.png", category: "Compact MPV", capacity: "Up to 5 passengers", ideal: "Small families or groups" },
     { name: "Voxy/Serena/Spada/Estima", price: "RM180.00 /Per Trip", image: "/car-img/voxy.png", category: "Compact MPV", capacity: "Up to 5 passengers", ideal: "Small families or groups" },
-    { name: "Vellfire/Alphard", price: "RM220.00 /Per Trip", image: "/car-img/vellfire.png", category: "Premium MPV", capacity: "Up to 6 passengers", ideal: "Travelers desiring luxury and space" },
+    { name: "Vellfire/Alphard", price: "RM250.00 /Per Trip", image: "/car-img/vellfire.png", category: "Premium MPV", capacity: "Up to 6 passengers", ideal: "Travelers desiring luxury and space" },
     { name: "Staria/Starex", price: "RM250.00 /Per Trip", image: "/car-img/straxe.png", category: "Family Van / Minivan", capacity: "Up to 10 passengers", ideal: "Large families or group travel" },
     { name: "Toyota Hiace 3.0", price: "RM300.00 /Per Trip", image: "/car-img/heice.png", category: "VIP Van", capacity: "Up to 16 passengers", ideal: "Corporate events, tours, or large groups" },
     { name: "Mercedes-Benz E200", price: "RM400.00 /Per Trip", image: "/car-img/mercedes.png", category: "Luxury Sedan", capacity: "Up to 3 passengers", ideal: "VIPs and special occasions" },

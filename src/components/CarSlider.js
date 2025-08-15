@@ -42,7 +42,7 @@ const cars = [
   },
   {
     name: "Vellfire/Alphard",
-    price: "RM220.00 / Per Trip",
+    price: "RM250.00 / Per Trip",
     image: "/car-img/vellfire.png",
     category: "Premium MPV",
     capacity: "Up to 6 passengers"
